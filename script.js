@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const errorMessage = document.getElementById('error')
     const dismissButton = document.getElementById("dismiss-button");
     const emailInput = document.getElementById("email");
+    const userEmail = document.getElementById("user-email");
 
     subscribeButton.addEventListener('click', (e) => {
         e.preventDefault()
@@ -13,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if(validateEmail(email)) {
             formContainer.style.display = 'none'
             successMessage.style.display = 'block'
+            userEmail.textContent = email
         } else {
             errorMessage.textContent = 'Valid email required'
             errorMessage.style.color = '#FF6155'
@@ -27,6 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
         formContainer.style.display = 'flex'
         emailInput.value = ''
         error.textContent = ''
+        emailInput.style.backgroundColor = 'transparent'
+        emailInput.style.color = 'lightgray'
+        emailInput.style.border = '1px solid lightgray'
     })
 
     function validateEmail(email){
