@@ -41,6 +41,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "Roboto", sans-serif;
+  background-color: #36384d;
 }
 
 /* Set shorter line heights on headings and interactive elements */
@@ -94,7 +95,14 @@ textarea:not([rows]) {
   scroll-margin-block: 5ex;
 }
 
+main {
+  background-color: #ffffff;
+  border-radius: 36px;
+}
+
 .form-container {
+  display: flex;
+  flex-direction: column;
   width: 375px;
 }
 
@@ -140,7 +148,8 @@ input {
   width: 100%;
 }
 
-.subscribe-button {
+.subscribe-button,
+.dismiss-button {
   font-family: "Roboto", sans-serif;
   width: 100%;
   padding: 1rem;
@@ -153,7 +162,8 @@ input {
   border: none;
 }
 
-.subscribe-button:hover {
+.subscribe-button:hover,
+.dismiss-button:hover {
   cursor: pointer;
   background: linear-gradient(#ff6a3a, #ff527b);
   box-shadow: 0px 16px 32px rgba(255, 97, 85, 0.5);
@@ -161,6 +171,7 @@ input {
 
 .success-message {
   display: none;
+  padding: 149px 1.5rem 40px 1.5rem;
 }
 
 .success-message h1 {
@@ -174,7 +185,8 @@ input {
   font-weight: bold;
 }
 
-.success-message button {
+.dismiss-button {
+  margin-top: 263px;
 }
 
 @media only screen and (min-width: 1100px) {
@@ -182,9 +194,24 @@ input {
     width: 928px;
     display: flex;
     flex-direction: row-reverse;
+    padding: 1.5rem;
+  }
+
+  .text-container {
+    margin-right: 4rem;
+    padding-inline: 2rem 0;
   }
 
   h1 {
     font-size: 56px;
+  }
+
+  .success-message {
+    width: 504px;
+    padding: 48px 4rem 40px 4rem;
+  }
+
+  .dismiss-button {
+    margin-top: 40px;
   }
 }
